@@ -67,9 +67,3 @@ const garden = [
 // Finding safe paths
 const allSafePaths = findSafePaths(garden);
 console.log(allSafePaths);
-
-// // Displaying all safe paths found
-// console.log('Safe Paths:');
-// allSafePaths.forEach(path => {
-//   console.log(path);
-// });
