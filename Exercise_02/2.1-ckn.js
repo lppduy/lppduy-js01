@@ -1,5 +1,3 @@
-// 1.  Write the function to calculate the combination (Ckn)
-
 const factorial = x => {
   if (x === 0) return 1;
 
@@ -7,9 +5,7 @@ const factorial = x => {
 };
 
 const ckn = (n, k) => {
-  if (k < 0 || k > n) return -1; // throw error
+  if (k < 0 || k > n) return 'Invalid input';
 
   return factorial(n) / (factorial(k) * factorial(n - k));
 };
-
-console.log(ckn(5, 2));

@@ -47,7 +47,3 @@ function readNumber(inputNumber) {
 
   return result.trim();
 }
-
-const number = 726503;
-const vietnamese = readNumber(number);
-console.log(vietnamese);

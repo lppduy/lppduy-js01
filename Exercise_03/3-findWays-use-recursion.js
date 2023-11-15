@@ -1,16 +1,9 @@
-// Exercise 3: 2D Arrays
-// -We have a rectangle garden with 3 row and 5 column: -each cell had a bomb or no bomb: ( 0: SAFE, 1: BOMB)
-// problem: find all the safe way to go from the left to the right of the garden.
-
-// examples:
-// Input: [ [0,1,1], [0,1,1], [0,1,1], [0,1,1], [0,0,1]]
-// Output : [ [0,0,0,0,0] , [0,0,0,0,1]]
-
 const findWays = arr => {
   const columns = arr.length;
   const rows = arr[0].length;
 
-  if (rows !== 3 || columns !== 5) return 'Please enter an array with 3 rows and 5 columns';
+  if (rows !== 3 || columns !== 5)
+    return 'Please enter an array with 3 rows and 5 columns';
 
   const indexOfRowSafe = [];
   for (let colIndex = 0; colIndex < columns; colIndex++) {
@@ -44,21 +37,3 @@ const findWays = arr => {
   generatePaths(0, []);
   return output;
 };
-
-// Test case
-// const input = [
-//   [0, 1, 1],
-//   [0, 1, 1],
-//   [0, 1, 1],
-//   [0, 1, 1],
-//   [0, 0, 1],
-// ];
-const input = [
-  [0, 1, 1],
-  [0, 1, 1],
-  [0, 1, 1],
-  [0, 0, 1],
-  [0, 0, 1],
-];
-const output = findWays(input);
-console.log(output);

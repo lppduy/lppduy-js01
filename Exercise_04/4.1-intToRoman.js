@@ -1,7 +1,4 @@
-// 1. convert to Roman number: n integer < 1,000
-
-// cách 1
-function romanize(num) {
+function intToRoman1(num) {
   if (num <= 0 || num >= 1000) return -1;
 
   const romanList = [
@@ -19,14 +16,8 @@ function romanize(num) {
 
   return roman;
 }
-// test case:
 
-const num = 277;
-const romanNum = romanize(num);
-console.log(romanNum);
-
-// cách 2
-const intToRoman = num => {
+const intToRoman2 = num => {
   const lookup = {
     M: 1000,
     CM: 900,
@@ -51,8 +42,3 @@ const intToRoman = num => {
   }
   return roman;
 };
-
-// test case:
-const number = 277;
-const romanNumber = intToRoman(number);
-console.log(romanNumber);
