@@ -11,7 +11,8 @@ const findWays = arr => {
   const rows = arr[0].length;
 
   // validate input
-  if (rows !== 3 || columns !== 5) return 'Vui lòng nhập mảng có 3 hàng và 5 cột';
+  if (rows !== 3 || columns !== 5)
+    return 'Vui lòng nhập mảng có 3 hàng và 5 cột';
 
   const indexOfRowSafe = []; // Mảng chứa các hàng an toàn cho từng cột
 
@@ -28,7 +29,6 @@ const findWays = arr => {
   // Nếu không có row an toàn nào trong col đầu tiên
   if (indexOfRowSafe[0].length === 0) return [];
 
-  const output = []; // Mảng chứa các đường đi an toàn từ col trái đến col phải
   const paths = [[]]; // Mảng các đường đi ban đầu chỉ có một đường đi rỗng
 
   // Duyệt qua từng col của khu vườn
@@ -51,25 +51,23 @@ const findWays = arr => {
     paths.push(...currentPaths); // Cập nhật các đường đi mới vào paths
   }
 
-  // Lọc và lưu trữ các đường đi có đủ số cột vào mảng output
-  output.push(...paths.filter(path => path.length === columns));
-  return output;
+  return paths;
 };
 
 // Test case
-const input = [
-  [0, 1, 1],
-  [0, 1, 1],
-  [0, 1, 1],
-  [0, 1, 1],
-  [0, 0, 1],
-];
 // const input = [
 //   [0, 1, 1],
 //   [0, 1, 1],
 //   [0, 1, 1],
-//   [0, 0, 1],
+//   [0, 1, 1],
 //   [0, 0, 1],
 // ];
+const input = [
+  [0, 1, 1],
+  [0, 1, 1],
+  [0, 1, 1],
+  [0, 0, 1],
+  [0, 0, 1],
+];
 const output = findWays(input);
 console.log(output);
