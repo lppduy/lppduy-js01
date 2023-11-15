@@ -3,7 +3,7 @@
    1000 => 1K, 1123400000 => 1.12B , 1342222 => 1.34M
  */
 
-const formatMoney = money => {
+const formatMoney = num => {
   const suffixes = ['', 'K', 'M', 'B', 'T'];
   let suffixIndex = 0;
 
@@ -13,7 +13,7 @@ const formatMoney = money => {
   }
 
   return num % 1 === 0
-    ? num.toFixed(0)
+    ? num.toFixed(0) + suffixes[suffixIndex]
     : num.toFixed(2) + suffixes[suffixIndex];
 };
 
