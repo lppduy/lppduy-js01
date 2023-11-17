@@ -61,7 +61,6 @@ window.onload = function () {
 
 function shuffleCards() {
   cardSet = cardList.concat(cardList);
-  // console.log(cardSet);
 
   for (let i = 0; i < cardSet.length; i++) {
     let j = Math.floor(Math.random() * cardSet.length);
